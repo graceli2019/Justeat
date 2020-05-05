@@ -20,7 +20,7 @@ It took me 2.5 hours to finish the technical test. If I had more time, there are
 Unfortunately, I do not have chance to work on a legacy application in my previous company. We worked in an Agile team so the code is very updated. But we did have a chance to work on some features after the developer had left. For this situation, I also applied the above strategy and it worked really well for me.
 
 ### 4. How would you improve the customer experience of the JUST EAT website?
-I think there are several thinks we can improve user's experience:
+I think there are several things we can improve user's experience:
 - Website can detect user location by IP address, so when the first time user lands on the homepage, the nearby restaurants information can display for people to browse and choose from skipping entering postcode steps.
 - "Name" label on the Sign up page could be changed to "Full Name",  so the user could register the form more quickly with entering valid credentials.
 - Improve UI design and consistency. Some Restaurant logo images on the homepage did not load successfully.

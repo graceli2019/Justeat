@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20200505 00:14:52.512" rpa="false">
+<suite id="s1" name="Test Search" source="C:\Users\grace\Desktop\Python\justeat\tests\test_search.robot">
+<test id="s1-t1" name="Unlogged user should be able to search restaurants with postcode">
+<kw name="Begin Web Test" library="CommonWeb" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200505 00:14:52.854" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200505 00:14:52.854" endtime="20200505 00:14:55.383"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200505 00:14:55.383" endtime="20200505 00:14:56.551"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:14:52.853" endtime="20200505 00:14:56.552"></status>
+</kw>
+<kw name="Given user is not logged in" library="JusteatWeb">
+<kw name="navigate to" library="Landing">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200505 00:14:56.557" level="INFO">Opening url 'https://www.just-eat.co.uk/'</msg>
+<status status="PASS" starttime="20200505 00:14:56.556" endtime="20200505 00:14:59.163"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:14:56.554" endtime="20200505 00:14:59.164"></status>
+</kw>
+<kw name="verify page loaded" library="Landing">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${landing_search_element}</arg>
+</arguments>
+<status status="PASS" starttime="20200505 00:14:59.166" endtime="20200505 00:14:59.724"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:14:59.165" endtime="20200505 00:14:59.724"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:14:56.553" endtime="20200505 00:14:59.725"></status>
+</kw>
+<kw name="And user searches for restaurants with postcode" library="JusteatWeb">
+<kw name="enter postcode" library="Search">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_input_element}</arg>
+<arg>${POSTCODE}</arg>
+</arguments>
+<msg timestamp="20200505 00:14:59.729" level="INFO">Typing text 'AR51 1AA' into text field 'xpath=//input[@name='postcode']'.</msg>
+<status status="PASS" starttime="20200505 00:14:59.727" endtime="20200505 00:15:00.197"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:14:59.727" endtime="20200505 00:15:00.198"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:14:59.726" endtime="20200505 00:15:00.198"></status>
+</kw>
+<kw name="When user attempts to search for restaurants" library="JusteatWeb">
+<kw name="begin to search" library="Search">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${search_search_button}</arg>
+</arguments>
+<msg timestamp="20200505 00:15:00.201" level="INFO">Clicking button 'xpath=//button[@class='Form_c-search-btn_2cjDI']'.</msg>
+<status status="PASS" starttime="20200505 00:15:00.200" endtime="20200505 00:15:02.564"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:15:00.199" endtime="20200505 00:15:02.564"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:15:00.198" endtime="20200505 00:15:02.564"></status>
+</kw>
+<kw name="Then the user should see some restaurants in the searching area" library="JusteatWeb">
+<kw name="verify page loaded" library="SearchResults">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${POSTCODE}</arg>
+</arguments>
+<status status="PASS" starttime="20200505 00:15:02.589" endtime="20200505 00:15:04.321"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${searchresults_verifywords_text}</arg>
+</arguments>
+<status status="PASS" starttime="20200505 00:15:04.321" endtime="20200505 00:15:04.747"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:15:02.588" endtime="20200505 00:15:04.747"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:15:02.587" endtime="20200505 00:15:04.747"></status>
+</kw>
+<kw name="End Web Test" library="CommonWeb" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200505 00:15:04.748" endtime="20200505 00:15:07.072"></status>
+</kw>
+<status status="PASS" starttime="20200505 00:15:04.748" endtime="20200505 00:15:07.073"></status>
+</kw>
+<doc>Search restaurants with entering postcode</doc>
+<tags>
+<tag>Search</tag>
+</tags>
+<status status="PASS" starttime="20200505 00:14:52.852" endtime="20200505 00:15:07.074" critical="yes"></status>
+</test>
+<doc>This is some information about searching restaurants in a customer area</doc>
+<status status="PASS" starttime="20200505 00:14:52.514" endtime="20200505 00:15:07.079"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Search</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Test Search">Test Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
